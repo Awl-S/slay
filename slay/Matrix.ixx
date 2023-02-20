@@ -7,18 +7,18 @@ import <iostream>;
 matrix exA_creation(data input)
 {
 	const size_t size = input.matrix_order;
-	matrix exA(size+1, std::vector<double>(size + 1, 0));
-
+	matrix exA(size + 1, std::vector<double>(size + 2, 0));
 	for (size_t i = 0; i < size; i++)
 	{
 		for (size_t j = 0; j < size; j++)
 		{
-			exA[i][j] = input.A[i][j];
+			exA.at(i).at(j) = input.A.at(i).at(j);
+
 		}
-		exA[i][size] = -input.X[i];
-		exA[size][i] = 0;
+		exA.at(i).at(size) = -input.X.at(i);
+		exA.at(size).at(i) = 0;
 	}
-	exA[size][size] = 1;
+	exA.at(size).at(size) = 1;
 
 	return exA;
 }
@@ -122,4 +122,18 @@ export matrix matrix_minus_matrix(matrix A, matrix B)
 		for (int j = 0; j < B.size(); j++)
 			c[i][j] = A[i][j] - B[i][j];
 	return c;
+}
+
+export matrix Extended_Matrix(data i_data)
+{
+	matrix exA(i_data.matrix_order + 1, std::vector<double>(i_data.matrix_order + 1, 0));
+	for (int i = 0; i < i_data.matrix_order; i++)
+	{
+		for (int j = 0; j < i_data.matrix_order; j++)
+		{
+			exA[i][j] = i_data.A[i][j];
+		}
+		exA[i][i_data.matrix_order] = -i_data.X[i];
+	}
+	return exA;
 }

@@ -2,6 +2,8 @@
 import FileReader;
 import Seidel;
 import inverse;
+import Matrix;
+import FileWriter;
 
 import <iostream>;
 import <fstream>;
@@ -18,15 +20,18 @@ inline void start()
 		{
 		case 1:
 		{
+			out(fileout, Extended_Matrix(i), "Расширенная Матрица");
 			seidel(i, fileout);
+			fileout << "\n\n\n\n";
 			break;
 		}
 		case 3:
 		{
+			out(fileout, Extended_Matrix(i), "Расширенная Матрица");
 			inverse_method(i, fileout);
+			fileout << "\n\n\n\n";
 			break;
 		}
-
 		default: std::cout << "Error\n";
 		}
 	}
