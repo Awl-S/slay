@@ -24,5 +24,5 @@ export void out(std::ofstream& fileout, const std::vector<std::vector<double>>& 
 		}
 		fileout << "\n";
 	}
-	fileout << "\n";
+	fileout << "\n\n";
 }

@@ -4,9 +4,8 @@ import Matrix;
 import FileWriter;
 import <iostream>;
 import <vector>;
-import "data_struct.h";
 import <string>;
-
+import "data_struct.h";
 
 double normalize(matrix eA)
 {
@@ -56,4 +55,3 @@ export void inverse_method(data i, std::ofstream& fileout)
 
 	fileout << "Норма невязки: " << normalize(eA) << "\n\n";
 }
-

@@ -5,7 +5,6 @@ import <vector>;
 import <iostream>;
 import "data_struct.h";
 
-
 export std::vector<data> Read(const char* filename)
 {
 	std::ifstream input(filename);
@@ -31,5 +30,3 @@ export std::vector<data> Read(const char* filename)
 	
 	return send;
 }
-
-
